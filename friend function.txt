@@ -1,0 +1,48 @@
+#include<iostream>
+using namespace std;
+class A
+{
+private:
+    int num1;
+    int num2;
+public:
+    A(int a,int b)
+    {
+        num1=a;
+        num2=b;
+    }
+    friend int largest(A);
+};
+int largest(A m)
+{
+
+   if(m.num1>m.num2)
+        return m.num1;
+   else
+        return m.num2;
+}
+class B
+{
+    int num1;
+    int num2;
+public:
+    B(int a, int b)
+    {
+        num1=a;
+        num2=b;
+    }
+    friend float average(B);
+};
+float average(B n)
+{
+return ((n.num1+n.num2)/2);
+}
+int main()
+{
+    A ob(2,3);
+    int w=largest(ob);
+    cout<<" the largest is: "<<w;
+    B ob1(9,4);
+    float x=average(ob1);
+    cout<<" the average is: "<<x;
+}
